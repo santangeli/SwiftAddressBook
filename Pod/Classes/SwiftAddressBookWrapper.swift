@@ -23,11 +23,11 @@ public var accessError : CFError?
 
 //MARK: Address Book
 
-public class SwiftAddressBook {
+open class SwiftAddressBook {
 
-	public var internalAddressBook : ABAddressBook!
+	open var internalAddressBook : ABAddressBook!
 	
-	private lazy var addressBookObserver = SwiftAddressBookObserver()
+	fileprivate lazy var addressBookObserver = SwiftAddressBookObserver()
 
 	public init?() {
 		var err : Unmanaged<CFError>? = nil
@@ -43,65 +43,65 @@ public class SwiftAddressBook {
 		}
 	}
 
-    public class func authorizationStatus() -> ABAuthorizationStatus {
+    open class func authorizationStatus() -> ABAuthorizationStatus {
         return ABAddressBookGetAuthorizationStatus()
     }
     
-    public class func requestAccessWithCompletion( completion : (Bool, CFError?) -> Void ) {
-        ABAddressBookRequestAccessWithCompletion(nil) {(let b : Bool, c : CFError!) -> Void in completion(b,c)}
+    open class func requestAccessWithCompletion( _ completion : @escaping (Bool, CFError?) -> Void ) {
+        ABAddressBookRequestAccessWithCompletion(nil) {(b : Bool, c : CFError?) -> Void in completion(b,c)}
     }
     
-    public func hasUnsavedChanges() -> Bool {
+    open func hasUnsavedChanges() -> Bool {
         return ABAddressBookHasUnsavedChanges(internalAddressBook)
     }
     
-    public func save() -> CFError? {
+    open func save() -> CFError? {
         return errorIfNoSuccess { ABAddressBookSave(self.internalAddressBook, $0)}
     }
     
-    public func revert() {
+    open func revert() {
         ABAddressBookRevert(internalAddressBook)
     }
     
-    public func addRecord(record : SwiftAddressBookRecord) -> CFError? {
+    open func addRecord(_ record : SwiftAddressBookRecord) -> CFError? {
         return errorIfNoSuccess { ABAddressBookAddRecord(self.internalAddressBook, record.internalRecord, $0) }
     }
     
-    public func removeRecord(record : SwiftAddressBookRecord) -> CFError? {
+    open func removeRecord(_ record : SwiftAddressBookRecord) -> CFError? {
         return errorIfNoSuccess { ABAddressBookRemoveRecord(self.internalAddressBook, record.internalRecord, $0) }
     }
     //MARK: person records
     
-    public var personCount : Int {
+    open var personCount : Int {
 		return ABAddressBookGetPersonCount(internalAddressBook)
     }
     
-    public func personWithRecordId(recordId : Int32) -> SwiftAddressBookPerson? {
+    open func personWithRecordId(_ recordId : Int32) -> SwiftAddressBookPerson? {
         return SwiftAddressBookPerson(record: ABAddressBookGetPersonWithRecordID(internalAddressBook, recordId)?.takeUnretainedValue())
     }
     
-    public var allPeople : [SwiftAddressBookPerson]? {
+    open var allPeople : [SwiftAddressBookPerson]? {
 		return convertRecordsToPersons(ABAddressBookCopyArrayOfAllPeople(internalAddressBook).takeRetainedValue())
     }
 
-	public func registerExternalChangeCallback(callback: () -> Void) {
-		addressBookObserver.startObserveChangesWithCallback { (addressBook) -> Void in
+	open func registerExternalChangeCallback(_ callback: @escaping () -> Void) {
+		addressBookObserver.startObserveChanges { (addressBook) -> Void in
 			callback()
 		}
 	}
 
-	public func unregisterExternalChangeCallback(callback: () -> Void) {
+	open func unregisterExternalChangeCallback(_ callback: () -> Void) {
 		addressBookObserver.stopObserveChanges()
 		callback()
 	}
 
 
 
-	public var allPeopleExcludingLinkedContacts : [SwiftAddressBookPerson]? {
+	open var allPeopleExcludingLinkedContacts : [SwiftAddressBookPerson]? {
 		if let all = allPeople {
 			let filtered : NSMutableArray = NSMutableArray(array: all)
 			for person in all {
-				if !(NSArray(array: filtered) as! [SwiftAddressBookPerson]).contains({
+				if !(NSArray(array: filtered) as! [SwiftAddressBookPerson]).contains(where: {
 					(p : SwiftAddressBookPerson) -> Bool in
 					return p.recordID == person.recordID
 				}) {
@@ -114,11 +114,11 @@ public class SwiftAddressBook {
 				for possibleDuplicate in allFiltered {
 					if let linked = person.allLinkedPeople {
 						if possibleDuplicate.recordID != person.recordID
-							&& linked.contains({
+							&& linked.contains(where: {
 								(p : SwiftAddressBookPerson) -> Bool in
 								return p.recordID == possibleDuplicate.recordID
 							}) {
-								(filtered as NSMutableArray).removeObject(possibleDuplicate)
+								(filtered as NSMutableArray).remove(possibleDuplicate)
 						}
 					}
 				}
@@ -128,49 +128,49 @@ public class SwiftAddressBook {
 		return nil
 	}
 
-    public func allPeopleInSource(source : SwiftAddressBookSource) -> [SwiftAddressBookPerson]? {
+    open func allPeopleInSource(_ source : SwiftAddressBookSource) -> [SwiftAddressBookPerson]? {
         return convertRecordsToPersons(ABAddressBookCopyArrayOfAllPeopleInSource(internalAddressBook, source.internalRecord).takeRetainedValue())
     }
     
-    public func allPeopleInSourceWithSortOrdering(source : SwiftAddressBookSource, ordering : SwiftAddressBookOrdering) -> [SwiftAddressBookPerson]? {
+    open func allPeopleInSourceWithSortOrdering(_ source : SwiftAddressBookSource, ordering : SwiftAddressBookOrdering) -> [SwiftAddressBookPerson]? {
         return convertRecordsToPersons(ABAddressBookCopyArrayOfAllPeopleInSourceWithSortOrdering(internalAddressBook, source.internalRecord, ordering.abPersonSortOrderingValue).takeRetainedValue())
     }
 	
-	public func peopleWithName(name : String) -> [SwiftAddressBookPerson]? {
-		return convertRecordsToPersons(ABAddressBookCopyPeopleWithName(internalAddressBook, name).takeRetainedValue())
+	open func peopleWithName(_ name : String) -> [SwiftAddressBookPerson]? {
+		return convertRecordsToPersons(ABAddressBookCopyPeopleWithName(internalAddressBook, name as CFString!).takeRetainedValue())
 	}
 
 
     //MARK: group records
     
-    public func groupWithRecordId(recordId : Int32) -> SwiftAddressBookGroup? {
+    open func groupWithRecordId(_ recordId : Int32) -> SwiftAddressBookGroup? {
 		return SwiftAddressBookGroup(record: ABAddressBookGetGroupWithRecordID(internalAddressBook, recordId)?.takeUnretainedValue())
     }
     
-    public var groupCount : Int {
+    open var groupCount : Int {
 		return ABAddressBookGetGroupCount(internalAddressBook)
     }
     
-    public var arrayOfAllGroups : [SwiftAddressBookGroup]? {
+    open var arrayOfAllGroups : [SwiftAddressBookGroup]? {
 		return convertRecordsToGroups(ABAddressBookCopyArrayOfAllGroups(internalAddressBook).takeRetainedValue())
     }
     
-    public func allGroupsInSource(source : SwiftAddressBookSource) -> [SwiftAddressBookGroup]? {
+    open func allGroupsInSource(_ source : SwiftAddressBookSource) -> [SwiftAddressBookGroup]? {
         return convertRecordsToGroups(ABAddressBookCopyArrayOfAllGroupsInSource(internalAddressBook, source.internalRecord).takeRetainedValue())
     }
     
     
     //MARK: sources
     
-    public var defaultSource : SwiftAddressBookSource? {
+    open var defaultSource : SwiftAddressBookSource? {
 		return SwiftAddressBookSource(record: ABAddressBookCopyDefaultSource(internalAddressBook)?.takeRetainedValue())
     }
     
-    public func sourceWithRecordId(sourceId : Int32) -> SwiftAddressBookSource? {
+    open func sourceWithRecordId(_ sourceId : Int32) -> SwiftAddressBookSource? {
         return SwiftAddressBookSource(record: ABAddressBookGetSourceWithRecordID(internalAddressBook, sourceId)?.takeUnretainedValue())
     }
     
-    public var allSources : [SwiftAddressBookSource]? {
+    open var allSources : [SwiftAddressBookSource]? {
 		return convertRecordsToSources(ABAddressBookCopyArrayOfAllSources(internalAddressBook).takeRetainedValue())
     }
 }

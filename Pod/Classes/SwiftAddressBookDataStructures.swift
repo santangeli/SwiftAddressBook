@@ -84,7 +84,7 @@ public enum SwiftAddressBookRecordType {
 }
 
 public enum SwiftAddressBookSourceType {
-	case local, exchange, exchangeGAL, mobileMe, LDAP, cardDAV, cardDAVSearch
+	case local, exchange, exchangeGAL, mobileMe, ldap, cardDAV, cardDAVSearch
 
 	init(abSourceType : ABSourceType) {
 		switch Int(abSourceType) {
@@ -97,7 +97,7 @@ public enum SwiftAddressBookSourceType {
 		case kABSourceTypeMobileMe :
 			self = .mobileMe
 		case kABSourceTypeLDAP :
-			self = .LDAP
+			self = .ldap
 		case kABSourceTypeCardDAV :
 			self = .cardDAV
 		case kABSourceTypeCardDAVSearch :

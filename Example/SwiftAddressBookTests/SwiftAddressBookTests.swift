@@ -10,6 +10,26 @@ import UIKit
 import XCTest
 import SwiftAddressBook
 import AddressBook
+fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l < r
+  case (nil, _?):
+    return true
+  default:
+    return false
+  }
+}
+
+fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l > r
+  default:
+    return rhs < lhs
+  }
+}
+
 
 //**** Run the example project first, to accept address book access ****
 class SwiftAddressBookTests: XCTestCase {
@@ -57,16 +77,16 @@ class SwiftAddressBookTests: XCTestCase {
 	//MARK: - Helper funtions
 
 	func getDateTimestamp() -> String {
-		let formatter = NSDateFormatter()
+		let formatter = DateFormatter()
 		formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZ"
-		return formatter.stringFromDate(NSDate())
+		return formatter.string(from: Date())
 	}
 
-	func getDate(year: Int,_ month: Int,_ day: Int) -> NSDate {
-		let components = NSDateComponents()
+	func getDate(_ year: Int,_ month: Int,_ day: Int) -> Date {
+		var components = DateComponents()
 		components.year = year
 		components.month = month
 		components.day = day
-		return NSCalendar.currentCalendar().dateFromComponents(components)!
+		return Calendar.current.date(from: components)!
 	}
 }

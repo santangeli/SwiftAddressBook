@@ -7,35 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		70D124121A9C217100FC9E1C /* SwiftAddressBookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D124111A9C217100FC9E1C /* SwiftAddressBookTests.swift */; };
 		8550DDB31A892055009B86D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8550DDB21A892055009B86D8 /* AppDelegate.swift */; };
 		8550DDB81A892055009B86D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8550DDB61A892055009B86D8 /* Main.storyboard */; };
 		8550DDBA1A892055009B86D8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8550DDB91A892055009B86D8 /* Images.xcassets */; };
 		8550DDBD1A892055009B86D8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8550DDBB1A892055009B86D8 /* LaunchScreen.xib */; };
-		85C301841ABDB1180026214B /* SwiftAddressBookPersonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C301831ABDB1180026214B /* SwiftAddressBookPersonTests.swift */; };
-		85C301871ABDB13E0026214B /* SwiftAddressBookGroupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C301851ABDB13E0026214B /* SwiftAddressBookGroupTests.swift */; };
-		85C301881ABDB13E0026214B /* SwiftAddressBookSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C301861ABDB13E0026214B /* SwiftAddressBookSourceTests.swift */; };
 		85DA60151A8FC05400EC0EC6 /* AddressViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DA60131A8FC05400EC0EC6 /* AddressViewCell.swift */; };
 		85DA60161A8FC05400EC0EC6 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DA60141A8FC05400EC0EC6 /* TableViewController.swift */; };
-		9B79B9C695233504B5DB01A2 /* Pods_SwiftAddressBookTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3133E1A1D3DAED0F67245F6C /* Pods_SwiftAddressBookTests.framework */; };
 		B28CD3CCE6C799C88D7A4984 /* Pods_SwiftAddressBookExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59B47BEC9A79A8BE499AEAB8 /* Pods_SwiftAddressBookExample.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		70D124131A9C217100FC9E1C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8550DDA51A892055009B86D8 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 8550DDAC1A892055009B86D8;
-			remoteInfo = SwiftAddressBookExample;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		3133E1A1D3DAED0F67245F6C /* Pods_SwiftAddressBookTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftAddressBookTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EAA8E546CB99A8C93969982 /* Pods-SwiftAddressBookTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftAddressBookTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftAddressBookTests/Pods-SwiftAddressBookTests.debug.xcconfig"; sourceTree = "<group>"; };
 		59B47BEC9A79A8BE499AEAB8 /* Pods_SwiftAddressBookExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftAddressBookExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		70D1240D1A9C217100FC9E1C /* SwiftAddressBookTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftAddressBookTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		70D124101A9C217100FC9E1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		70D124111A9C217100FC9E1C /* SwiftAddressBookTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftAddressBookTests.swift; sourceTree = "<group>"; };
 		7D00E56CB8B326BD2EDABF77 /* Pods-SwiftAddressBookExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftAddressBookExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftAddressBookExample/Pods-SwiftAddressBookExample.release.xcconfig"; sourceTree = "<group>"; };
@@ -56,14 +40,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		70D1240A1A9C217100FC9E1C /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9B79B9C695233504B5DB01A2 /* Pods_SwiftAddressBookTests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		8550DDAA1A892055009B86D8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -130,7 +106,6 @@
 			isa = PBXGroup;
 			children = (
 				8550DDAD1A892055009B86D8 /* SwiftAddressBookExample.app */,
-				70D1240D1A9C217100FC9E1C /* SwiftAddressBookTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -161,37 +136,16 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		70D1240C1A9C217100FC9E1C /* SwiftAddressBookTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 70D124151A9C217100FC9E1C /* Build configuration list for PBXNativeTarget "SwiftAddressBookTests" */;
-			buildPhases = (
-				811A2F4CF324EF923EB6CC2F /* 📦 Check Pods Manifest.lock */,
-				70D124091A9C217100FC9E1C /* Sources */,
-				70D1240A1A9C217100FC9E1C /* Frameworks */,
-				70D1240B1A9C217100FC9E1C /* Resources */,
-				06C66151B204EB6021EDF97C /* 📦 Embed Pods Frameworks */,
-				0D964A1480AD4627D6F8A794 /* 📦 Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				70D124141A9C217100FC9E1C /* PBXTargetDependency */,
-			);
-			name = SwiftAddressBookTests;
-			productName = SwiftAddressBookTests;
-			productReference = 70D1240D1A9C217100FC9E1C /* SwiftAddressBookTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		8550DDAC1A892055009B86D8 /* SwiftAddressBookExample */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8550DDCC1A892055009B86D8 /* Build configuration list for PBXNativeTarget "SwiftAddressBookExample" */;
 			buildPhases = (
-				CE1033B9B16E497813370351 /* 📦 Check Pods Manifest.lock */,
+				CE1033B9B16E497813370351 /* [CP] Check Pods Manifest.lock */,
 				8550DDA91A892055009B86D8 /* Sources */,
 				8550DDAA1A892055009B86D8 /* Frameworks */,
 				8550DDAB1A892055009B86D8 /* Resources */,
-				6E79ACE9512CDB82890F1B97 /* 📦 Embed Pods Frameworks */,
-				9761DDC48E0439939B842612 /* 📦 Copy Pods Resources */,
+				6E79ACE9512CDB82890F1B97 /* [CP] Embed Pods Frameworks */,
+				9761DDC48E0439939B842612 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -208,15 +162,13 @@
 		8550DDA51A892055009B86D8 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = socialbit;
 				TargetAttributes = {
-					70D1240C1A9C217100FC9E1C = {
-						CreatedOnToolsVersion = 6.1.1;
-						TestTargetID = 8550DDAC1A892055009B86D8;
-					};
 					8550DDAC1A892055009B86D8 = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = S27R58ALF2;
+						LastSwiftMigration = 0810;
 					};
 				};
 			};
@@ -234,19 +186,11 @@
 			projectRoot = "";
 			targets = (
 				8550DDAC1A892055009B86D8 /* SwiftAddressBookExample */,
-				70D1240C1A9C217100FC9E1C /* SwiftAddressBookTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		70D1240B1A9C217100FC9E1C /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		8550DDAB1A892055009B86D8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -260,44 +204,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		06C66151B204EB6021EDF97C /* 📦 Embed Pods Frameworks */ = {
+		6E79ACE9512CDB82890F1B97 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftAddressBookTests/Pods-SwiftAddressBookTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		0D964A1480AD4627D6F8A794 /* 📦 Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftAddressBookTests/Pods-SwiftAddressBookTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		6E79ACE9512CDB82890F1B97 /* 📦 Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -305,29 +219,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftAddressBookExample/Pods-SwiftAddressBookExample-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		811A2F4CF324EF923EB6CC2F /* 📦 Check Pods Manifest.lock */ = {
+		9761DDC48E0439939B842612 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		9761DDC48E0439939B842612 /* 📦 Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -335,35 +234,24 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftAddressBookExample/Pods-SwiftAddressBookExample-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		CE1033B9B16E497813370351 /* 📦 Check Pods Manifest.lock */ = {
+		CE1033B9B16E497813370351 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		70D124091A9C217100FC9E1C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				85C301841ABDB1180026214B /* SwiftAddressBookPersonTests.swift in Sources */,
-				85C301871ABDB13E0026214B /* SwiftAddressBookGroupTests.swift in Sources */,
-				85C301881ABDB13E0026214B /* SwiftAddressBookSourceTests.swift in Sources */,
-				70D124121A9C217100FC9E1C /* SwiftAddressBookTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		8550DDA91A892055009B86D8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -375,14 +263,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		70D124141A9C217100FC9E1C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 8550DDAC1A892055009B86D8 /* SwiftAddressBookExample */;
-			targetProxy = 70D124131A9C217100FC9E1C /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		8550DDB61A892055009B86D8 /* Main.storyboard */ = {
@@ -404,38 +284,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		70D124161A9C217100FC9E1C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3EAA8E546CB99A8C93969982 /* Pods-SwiftAddressBookTests.debug.xcconfig */;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = SwiftAddressBookTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "de.socialbit.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftAddressBookExample.app/SwiftAddressBookExample";
-			};
-			name = Debug;
-		};
-		70D124171A9C217100FC9E1C /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E61CDA1358F3B70376939D97 /* Pods-SwiftAddressBookTests.release.xcconfig */;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = SwiftAddressBookTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "de.socialbit.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftAddressBookExample.app/SwiftAddressBookExample";
-			};
-			name = Release;
-		};
 		8550DDCA1A892055009B86D8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -449,8 +297,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -460,6 +310,7 @@
 				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -494,8 +345,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -504,6 +357,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -513,6 +367,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -522,8 +377,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D9105ADBB97DCA0464A0D0EC /* Pods-SwiftAddressBookExample.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = S27R58ALF2;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = SwiftAddressBookExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -531,6 +388,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "SwiftAddressBookExample/SwiftAddressBookExample-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -538,30 +396,24 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7D00E56CB8B326BD2EDABF77 /* Pods-SwiftAddressBookExample.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = S27R58ALF2;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = SwiftAddressBookExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "de.socialbit.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "SwiftAddressBookExample/SwiftAddressBookExample-Bridging-Header.h";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		70D124151A9C217100FC9E1C /* Build configuration list for PBXNativeTarget "SwiftAddressBookTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				70D124161A9C217100FC9E1C /* Debug */,
-				70D124171A9C217100FC9E1C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		8550DDA81A892055009B86D8 /* Build configuration list for PBXProject "SwiftAddressBookExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

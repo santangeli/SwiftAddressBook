@@ -12,28 +12,28 @@ import AddressBook
 
 //MARK: Wrapper for ABAddressBookRecord of type ABSource
 
-public class SwiftAddressBookSource : SwiftAddressBookRecord {
+open class SwiftAddressBookSource : SwiftAddressBookRecord {
 
-	public var sourceType : SwiftAddressBookSourceType {
+	open var sourceType : SwiftAddressBookSourceType {
 		get {
 			return SwiftAddressBookSourceType(abSourceType: internalSourceType)
 		}
 	}
 
-	public var searchable : Bool {
+	open var searchable : Bool {
 		get {
 			return (kABSourceTypeSearchableMask & internalSourceType) != 0
 		}
 	}
 
-	private var internalSourceType : Int32 {
+	fileprivate var internalSourceType : Int32 {
 		get {
 			let sourceType = ABRecordCopyValue(internalRecord, kABSourceTypeProperty)?.takeRetainedValue() as! NSNumber
-			return sourceType.intValue
+			return sourceType.int32Value
 		}
 	}
 
-	public var sourceName : String? {
+	open var sourceName : String? {
 		get {
 			return ABRecordCopyValue(internalRecord, kABSourceNameProperty)?.takeRetainedValue() as? String
 		}

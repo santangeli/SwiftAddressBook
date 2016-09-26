@@ -10,6 +10,26 @@ import UIKit
 import XCTest
 import SwiftAddressBook
 import AddressBook
+fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l < r
+  case (nil, _?):
+    return true
+  default:
+    return false
+  }
+}
+
+fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l > r
+  default:
+    return rhs < lhs
+  }
+}
+
 
 //**** Run the example project first, to accept address book access ****
 class SwiftAddressBookPersonTests: XCTestCase {
@@ -41,13 +61,13 @@ class SwiftAddressBookPersonTests: XCTestCase {
 
 		let image = UIImage(named: "testImage")!
 		p.setImage(image)
-		XCTAssertTrue(UIImagePNGRepresentation(image)!.isEqual(UIImagePNGRepresentation(p.image!)!),
+		XCTAssertTrue(UIImagePNGRepresentation(image)! == UIImagePNGRepresentation(p.image!)!,
 			"Images must stay the same after setting and retrieving again")
 
 		/* test with differently oriented image */
-		let imageRotated = UIImage(CGImage: image.CGImage!, scale: 1.0, orientation: UIImageOrientation.DownMirrored)
+		let imageRotated = UIImage(cgImage: image.cgImage!, scale: 1.0, orientation: UIImageOrientation.downMirrored)
 		p.setImage(imageRotated)
-		XCTAssertTrue(UIImagePNGRepresentation(imageRotated)!.isEqual(UIImagePNGRepresentation(p.image!)!),
+		XCTAssertTrue(UIImagePNGRepresentation(imageRotated)! == UIImagePNGRepresentation(p.image!)!,
 			"Images must stay the same after setting and retrieving again")
 
 		/* test with deleted image */
@@ -66,7 +86,7 @@ class SwiftAddressBookPersonTests: XCTestCase {
 		p.firstName = "firstname"
 		XCTAssertEqual("firstname", p.compositeName, "composite name should consist first name when no lastname is set")
 		p.lastName = "lastname"
-		XCTAssertTrue((p.compositeName ?? "").containsString("lastname"), "composite name should contain first and last name")
+		XCTAssertTrue((p.compositeName ?? "").contains("lastname"), "composite name should contain first and last name")
 	}
 
 	func testGetPerson() {
@@ -343,18 +363,18 @@ class SwiftAddressBookPersonTests: XCTestCase {
 	//MARK: - Helper funtions
 
 	func getDateTimestamp() -> String {
-		let formatter = NSDateFormatter()
+		let formatter = DateFormatter()
 		formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZ"
-		return formatter.stringFromDate(NSDate())
+		return formatter.string(from: Date())
 	}
 
-	func getDate(year: Int,_ month: Int,_ day: Int,_ hour: Int) -> NSDate {
-		let components = NSDateComponents()
+	func getDate(_ year: Int,_ month: Int,_ day: Int,_ hour: Int) -> Date {
+		var components = DateComponents()
 		components.year = year
 		components.month = month
 		components.day = day
 		components.hour = hour
-		components.timeZone = NSTimeZone(name: "UTC")
-		return NSCalendar.currentCalendar().dateFromComponents(components)!
+		(components as NSDateComponents).timeZone = TimeZone(identifier: "UTC")
+		return Calendar.current.date(from: components)!
 	}
 }
